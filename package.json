@@ -2,6 +2,7 @@
   "name": "tic-tac-toe",
   "description": "Tic-Tac-Toe project from React's documentation with history of moves.",
   "version": "0.0.1",
+  "homepage": "https://github.com/yamanidev/tic-tac-toe#about",
   "type": "module",
   "scripts": {
     "dev": "vite",
