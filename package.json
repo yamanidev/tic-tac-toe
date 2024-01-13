@@ -1,7 +1,7 @@
 {
-  "name": "react-testing",
-  "private": true,
-  "version": "0.0.0",
+  "name": "tic-tac-toe",
+  "description": "Tic-Tac-Toe project from React's documentation with history of moves.",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
