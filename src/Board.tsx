@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import Cell from './Cell';
 import { PlayerMove } from './types';
-import { displayGridHistory, getWinner } from './utils';
+import { displayBoardHistory, getWinner } from './utils';
 
-function Grid() {
+function Board() {
   const [boardHistory, setBoardHistory] = useState<PlayerMove[][]>([new Array(9).fill('')]);
   const [currentStep, setCurrentStep] = useState<number>(0);
   const playerTurn: PlayerMove = currentStep % 2 === 0 ? 'X' : 'O';
@@ -11,7 +11,7 @@ function Grid() {
 
   // For testing
   useEffect(() => {
-    displayGridHistory(boardHistory);
+    displayBoardHistory(boardHistory);
   }, [boardHistory]);
 
   function handleCellClick(value: PlayerMove, index: number) {
@@ -71,4 +71,4 @@ function Grid() {
   );
 }
 
-export default Grid;
+export default Board;
