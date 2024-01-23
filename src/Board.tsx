@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import Cell from './Cell';
 import { PlayerMove } from './types';
-import { displayGridHistory, getWinner, isHistoryDuplicateOfLast } from './utils';
+import { displayBoardHistory, getWinner, isHistoryDuplicateOfLast } from './utils';
 
-function Grid() {
+function Board() {
   const [boardState, setBoardState] = useState<PlayerMove[]>(new Array(9).fill(''));
   const [boardHistory, setBoardHistory] = useState<PlayerMove[][]>([]);
   const [currentStep, setCurrentStep] = useState<number>(0);
@@ -12,7 +12,7 @@ function Grid() {
 
   // For testing
   useEffect(() => {
-    displayGridHistory(boardHistory);
+    displayBoardHistory(boardHistory);
   }, [boardHistory]);
 
   function handleCellClick(value: PlayerMove, index: number) {
@@ -81,4 +81,4 @@ function Grid() {
   );
 }
 
-export default Grid;
+export default Board;

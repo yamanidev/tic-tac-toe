@@ -7,20 +7,20 @@ export function isHistoryDuplicateOfLast(history: PlayerMove[][], newEntry: Play
 }
 
 // For testing
-export function displayGrid(grid: PlayerMove[]) {
-  if (!grid || grid.length === 0) return;
+export function displayBoard(board: PlayerMove[]) {
+  if (!board || board.length === 0) return;
   console.log(`
-    ${grid[0] || '-'} ${grid[1] || '-'} ${grid[2] || '-'}
-    ${grid[3] || '-'} ${grid[4] || '-'} ${grid[5] || '-'}
-    ${grid[6] || '-'} ${grid[7] || '-'} ${grid[8] || '-'}
+    ${board[0] || '-'} ${board[1] || '-'} ${board[2] || '-'}
+    ${board[3] || '-'} ${board[4] || '-'} ${board[5] || '-'}
+    ${board[6] || '-'} ${board[7] || '-'} ${board[8] || '-'}
   `);
 }
 
 // For testing
-export function displayGridHistory(gridHistory: PlayerMove[][]) {
-  if (!gridHistory || gridHistory.length === 0) return;
-  for (const grid of gridHistory) {
-    displayGrid(grid);
+export function displayBoardHistory(boardHistory: PlayerMove[][]) {
+  if (!boardHistory || boardHistory.length === 0) return;
+  for (const board of boardHistory) {
+    displayBoard(board);
   }
   console.log('-----------');
 }

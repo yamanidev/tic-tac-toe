@@ -1,9 +1,9 @@
-import Grid from './Grid';
+import Board from './Board';
 
 function App() {
   return (
     <div className="flex flex-col items-center pt-20">
-      <Grid />
+      <Board />
     </div>
   );
 }
