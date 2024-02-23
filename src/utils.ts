@@ -25,43 +25,28 @@ export function displayBoardHistory(boardHistory: PlayerMove[][]) {
   console.log('-----------');
 }
 
-// Probably can be made a lot simpler (TODO?)
 export function getWinner(boardState: PlayerMove[], moves: number) {
-  // Indices:
-  // 0 1 2
-  // 3 4 5
-  // 6 7 8
-  // 0 3 6
-  // 1 4 7
-  // 2 5 8
-  // 0 4 8
-  // 2 4 6
-
   // Minimum number of moves to victory
   if (moves < 5) return;
 
-  // Horizontal
-  for (let i = 0; i < 9; i += 3) {
-    const sequence = boardState.slice(i, i + 3);
-    if (sequence[0] === sequence[1] && sequence[0] === sequence[2]) {
-      return sequence[0];
+  const correctIndices = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+  ];
+
+  for (let i = 0; i < correctIndices.length; i++) {
+    const [a, b, c] = correctIndices[i];
+
+    if (boardState[a] === boardState[b] && boardState[a] === boardState[c]) {
+      return boardState[a];
     }
   }
 
-  // Vertical
-  for (let i = 0; i < 3; i++) {
-    const sequence = [boardState[i], boardState[i + 3], boardState[i + 6]];
-    if (sequence[0] === sequence[1] && sequence[0] === sequence[2]) {
-      return sequence[0];
-    }
-  }
-
-  // Diagonal
-  // Index 4 is the middle cell
-  if (
-    (boardState[4] === boardState[0] && boardState[4] === boardState[8]) ||
-    (boardState[4] === boardState[2] && boardState[4] === boardState[6])
-  ) {
-    return boardState[4];
-  }
+  return null;
 }
