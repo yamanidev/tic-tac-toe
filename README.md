@@ -4,6 +4,8 @@ Tic-Tac-Toe from [React's documentation](https://react.dev/learn/tutorial-tic-ta
 
 As a flex, I wanted to build the game before going through the tutorial. To my surprise, I kind of struggled, revised some fundamentals, mostly on immutability of state and React's strict mode.
 
+The code I wrote before going through the tutorial can be found in the `before-tutorial` branch while `main` branch contains the final version.
+
 ## Running the project locally
 
 - Clone the project.
